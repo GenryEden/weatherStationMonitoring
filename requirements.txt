@@ -1,0 +1,5 @@
+flask==2.0.1
+apscheduler==3.7.0
+matplotlib==3.3.4
+requests==2.25.1
+gevent==21.1.2

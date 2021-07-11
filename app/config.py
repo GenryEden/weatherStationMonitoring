@@ -17,4 +17,4 @@ periods = {
 
 updateTime = 1 # период обновления графиков (в минутах)
 
-apiPassword = 'changemeplz'
+apiPassword = 'changemeplz' # пароль для API
