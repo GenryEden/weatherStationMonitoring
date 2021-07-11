@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <link rel='StyleSheet' type='text/css' href='/static/stylesheets/main.css' /> 
+  <title>{{title}}</title>
+</head>
+<body>
+  {% if right%}
+  <figure class="sign">
+   <p><a href='{{left.url}}'><h1>{{left.value}}</h1></a></p>
+   <figcaption>{{left.name}}</figcaption>
+  </figure>
+  <figure class="sign">
+   <p><a href='{{right.url}}'><h1>{{right.value}}</h1></a></p>
+   <figcaption>{{right.name}}</figcaption>
+  </figure>
+  {% else %}
+  <figure class="fullsign">
+   <p><a href='{{left.url}}'><h1>{{left.value}}</h1></a></p>
+   <figcaption>{{left.name}}</figcaption>
+  </figure>
+  {% endif %}
+  {% for graph in graphs%}
+    <figure class="sign">
+     <p><a href={{graph.location}}><img src="{{graph.location}}" alt="График"></a></p>
+     <figcaption>{{graph.name}}</figcaption>
+    </figure>
+  {% endfor %}
+  {% if dbUrl%}
+   {% if fullDB == 0 %}
+    <figure class="fullsign" height=1500px>	
+      <p><a href='{{dbUrl}}'><h1>Скачать БД</h1></a></p>
+     <figcaption>В формате CSV</figcaption>
+    </figure>
+    {% else %}
+    <figure class="sign" height=1500px>
+	    <p><a href='{{dbUrl}}'><h1>Скачать БД</h1></a></p>
+    <figcaption>В формате CSV</figcaption>
+    </figure>
+    {% endif %}
+  {% endif %}
+ </body>
+</body>
+</html>
